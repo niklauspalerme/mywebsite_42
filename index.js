@@ -9,7 +9,7 @@ app.get('/', function(req, res) {
 
 app.post('/users', async (req, res) => {
   try {
-    console.log("New request GET to /users");
+    console.log("New request POST to /users");
     await mongo.addNewUser();
     res.sendStatus(200);
   } catch (err) {
@@ -19,7 +19,7 @@ app.post('/users', async (req, res) => {
  
 app.get('/users', async (req, res) => {
   try {
-    console.log("New request POST to /users");
+    console.log("New request GET to /users");
     let users = await mongo.getAllUsers();
     res.send(users);
   } catch (err) {
